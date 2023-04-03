@@ -15,7 +15,7 @@ config = {
 
         color = 3,
 
-        distToDelete = 100.0,
+        distToDelete = 100.0
     },
 
     updateDelay = nil

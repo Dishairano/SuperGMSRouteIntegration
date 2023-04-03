@@ -1,4 +1,4 @@
 {
-	"version": "1.0.0",
-	"changelog": "Public V1.0 release of the route plugin"
+	"version": "1.5.2",
+	"changelog": "Add ability to get postals from vec3 server sided"
 }
