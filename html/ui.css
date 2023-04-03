@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body {
+  margin: 0;
+  left: 0;
+  top: 0;
+}
+
+@keyframes Push {
+  0% {
+    margin-left: -300px;
+  }
+  100% {
+    opacity: 1.0;
+  }
+}
+
+@keyframes Out {
+  0% {
+    opacity: 1.0;
+  }
+  60% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.0;
+    margin-left: -450px;
+  }
+}
+
+notification-box {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  height: auto;
+}
+
+.notify {
+  opacity: 1 !important;
+  width: auto;
+  min-width: 265px;
+  max-width: 500px;
+  height: auto;
+  min-height: 65px;
+  max-height: 200px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 30px;
+  background: #1D65FC;
+  margin-bottom: 10px;
+  display: flex;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  line-height: 21px;
+  font-size: 18px;
+  font-weight: 550;
+  border-radius: 10px;
+}
+
+.notify .circle {
+  display: flex;
+  border-radius: 50%;
+  background: #367CFC;
+  width: 45px;
+  height: 45px;
+
+  margin-top: 12px;
+  margin-left: 13px;
+}
+
+.notify .text {
+  margin-top: 12px;
+  margin-left: 13px;
+}
+
+.notify svg {
+  position: absolute;
+  margin-top: 25px;
+  margin-left: 25px;
+}
+
+.notify-enter {
+  animation: Push 0.5s ease;
+}
+
+.notify-leave {
+  animation: Out 1s ease;
+}
+
+.info .circle{
+  background: #367CFC;
+}
+
+.success .circle {
+  background: #32C065;
+}
+
+.error .circle {
+  background: #FC115C;
+}
+
+.warn .circle {
+  background: #FCC45C;
+}
+
+.info {
+  background: #1D65FC;
+}
+
+.success  {
+  background: #18B751;
+}
+
+.error  {
+  background: #E4024B;
+}
+
+.warn  {
+  background: #FCAC23;
+}
