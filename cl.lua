@@ -5,12 +5,7 @@ postals = nil
 Citizen.CreateThread(function()
     postals = LoadResourceFile(GetCurrentResourceName(), GetResourceMetadata(GetCurrentResourceName(), 'postal_file'))
     postals = json.decode(postals)
-    for i, postal in ipairs(postals) do
-        postals[i] = {
-            vec(postal.x, postal.y),
-            code = postal.code
-        }
-    end
+    for i, postal in ipairs(postals) do postals[i] = { vec(postal.x, postal.y), code = postal.code } end
 end)
 
 ---@class NearestResult
@@ -24,6 +19,4 @@ nearest = nil
 ---@field hndl number
 pBlip = nil
 
-exports('getPostal', function()
-    return nearest and nearest.code or nil
-end)
+exports('getPostal', function() return nearest and nearest.code or nil end)

@@ -8,18 +8,21 @@ local format = string.format
 --- [[ Nearest Postal Commands ]] ---
 ---
 
-TriggerEvent('chat:addSuggestion', '/postcode', 'Zet een GPS marker naar een locatie waar u heen wil', {{
-    name = 'Postcode',
-    help = 'De postcode waar u naartoe wilt.'
-}})
+TriggerEvent('chat:addSuggestion', '/postal', 'Set the GPS to a specific postal',
+             { { name = 'Postal Code', help = 'The postal code you would like to go to' } })
 
-RegisterCommand('postcode', function(_, args)
+RegisterCommand('postal', function(_, args)
     if #args < 1 then
         if pBlip then
             RemoveBlip(pBlip.hndl)
             pBlip = nil
-            TriggerEvent('SuperGMS-NotifyScript:sendNotify', 'Waarschuwing</br>De route is verwijderd van uw CityGIS.',
-                'warn')
+            TriggerEvent('chat:addMessage', {
+                color = { 255, 0, 0 },
+                args = {
+                    'Postals',
+                    config.blip.deleteText
+                }
+            })
         end
         return
     end
@@ -35,14 +38,9 @@ RegisterCommand('postcode', function(_, args)
     end
 
     if foundPostal then
-        if pBlip then
-            RemoveBlip(pBlip.hndl)
-        end
+        if pBlip then RemoveBlip(pBlip.hndl) end
         local blip = AddBlipForCoord(foundPostal[1][1], foundPostal[1][2], 0.0)
-        pBlip = {
-            hndl = blip,
-            p = foundPostal
-        }
+        pBlip = { hndl = blip, p = foundPostal }
         SetBlipRoute(blip, true)
         SetBlipSprite(blip, config.blip.sprite)
         SetBlipColour(blip, config.blip.color)
@@ -51,10 +49,21 @@ RegisterCommand('postcode', function(_, args)
         AddTextComponentSubstringPlayerName(format(config.blip.blipText, pBlip.p.code))
         EndTextCommandSetBlipName(blip)
 
-        TriggerEvent('SuperGMS-NotifyScript:sendNotify',
-            'Succes</br>Routebeschrijving succesvol geimplementeerd in het CityGIS', 'success')
+        TriggerEvent('chat:addMessage', {
+            color = { 255, 0, 0 },
+            args = {
+                'Postals',
+                format(config.blip.drawRouteText, foundPostal.code)
+            }
+        })
     else
-        TriggerEvent('SuperGMS-NotifyScript:sendNotify',
-            'Error</br>Routebeschrijving onseccesvol vestuurd naar het CityGIS', 'error')
+        TriggerEvent('chat:addMessage', {
+            color = { 255, 0, 0 },
+            args = {
+                'Postals',
+                config.blip.notExistText
+            }
+        })
     end
 end)
+
