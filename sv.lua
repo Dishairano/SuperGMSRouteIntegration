@@ -23,17 +23,23 @@ CHANGELOG: %s
     end
 end)
 
-RegisterCommand('SendFunctionGMS', function(source, args)
-    local src = source
-    local imp = tonumber(args[1])
-    local cmd = ""
-    for i, k in pairs(args) do
-        if i > 1 then
-            cmd = cmd .. k .. " "
-        end
-    end
+RegisterNetEvent('SuperGMS:SendFunction', function(cmd)
+    ExecuteCommand(cmd)
+end)
 
-    if imp ~= nil and GetPlayerPing(imp) ~= 0 then
-        TriggerClientEvent('SuperGMS:SendFunction', imp, cmd)
+RegisterNetEvent('SuperGMS-NotifyScript:sendNotify')
+AddEventHandler('SuperGMS-NotifyScript:sendNotify', function(message, type)
+    if type then
+        SendNUIMessage({
+            name = 'addNotification',
+            type = type,
+            message = message
+        })
+    else
+        SendNUIMessage({
+            name = 'addNotification',
+            type = nil,
+            message = message
+        })
     end
 end)
