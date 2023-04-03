@@ -16,12 +16,6 @@ config = {
         color = 3,
 
         distToDelete = 100.0,
-
-        deleteText = 'Route verwijderd',
-
-        drawRouteText = 'Teken een route %s',
-
-        notExistText = "Deze postcode bestaat niet"
     },
 
     updateDelay = nil
