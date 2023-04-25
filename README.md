@@ -1,85 +1,36 @@
-# Nearest Postals
+# Installation Guide for [Plugin Name]
 
-This script displays the nearest postal next to map, and allows you to navigate to specific postal codes with `/postal`
+## Prerequisites
+Before you can install [Plugin Name], please make sure that you have the following installed:
+- [List of prerequisites, such as the required version of WordPress or any other dependencies]
 
 ## Installation
+To install [Plugin Name], please follow these steps:
 
-1. There are 2 ways to install it, and I recommend the first
-    1. Run the following command in a terminal
-        - `git clone https://github.com/blockba5her/nearest-postal.git`
-    2. Download the code from the GitHub [releases](https://github.com/blockba5her/nearest-postal/releases)
-2. As of now, this script supports 3 postal maps. From what I have seen, these are the most popular
-    - `new-postals.json` -> [New and Improved Postals](https://forum.fivem.net/t/release-postal-code-map-new-improved-v1-1/147458)
-    - `old-postals.json` -> [Original Postals](https://forum.fivem.net/t/release-modified-street-names-w-postal-numbers/8717)
-    - `ocrp-postals.json` -> [OCRP Postals](https://forum.fivem.net/t/release-ocrp-community-releases/166277)
-3. To setup the postal map, open the `fxmanifest.lua` file and change the variable `postalFile` to one of the files above
-    - **NOTE**: This defaults as the `new-postals.json` file
+1. **Step 1: Download the Plugin**
+   - Explain how to download the plugin. For example, you could provide a link to the plugin on the WordPress plugin repository, or provide a direct download link to a ZIP file.
+2. **Step 2: Upload the Plugin**
+   - Explain how to upload the plugin to the website. For example, if you are using WordPress, you could explain how to upload the ZIP file through the WordPress dashboard.
+3. **Step 3: Activate the Plugin**
+   - Explain how to activate the plugin. For example, if you are using WordPress, you could explain how to activate the plugin through the WordPress dashboard.
 
-## Command
+## Configuration
+Once you have installed [Plugin Name], you may need to configure it before you can use it. Please follow these steps:
 
-To draw a route to a certain postal, type `/postal [postalName]` and to remove just type `/postal`
+1. **Step 1: Access the Plugin Settings**
+   - Explain how to access the plugin settings. For example, if you are using WordPress, you could explain where to find the plugin settings in the WordPress dashboard.
+2. **Step 2: Configure the Plugin**
+   - Explain how to configure the plugin settings. For example, if you are using WordPress, you could explain how to enter the required information into the plugin settings.
 
-It will automatically remove the route when within 100m of the destination
+## Troubleshooting
+If you experience any issues while installing or configuring [Plugin Name], please try the following troubleshooting steps:
 
-## Updates
+1. **Step 1: Check for Conflicts**
+   - Explain how to check for conflicts with other plugins or themes.
+2. **Step 2: Check for Errors**
+   - Explain how to check for errors in the plugin logs or error messages.
+3. **Step 3: Contact Support**
+   - Provide contact information for support, such as an email address or support forum.
 
-### 1.5
-
--   Major performance improvements
--   Added the `refreshRate` configuration option
--   Simplified distance calculation logic
--   Separated code into separate files
--   Prebuild the postal list with vectors at startup
--   Use FiveM Lua 5.4
-
-### 1.4
-
--   Performance Improvements
--   New config options added
--   Fix some tiny bugs (and leftover code)
-
-### 1.3
-
--   Improvements in selection of postal map
--   Fix dev mode being on
-
-### 1.2.1
-
--   Fixes to missing postals on improved postal map
-
-### 1.2
-
--   Updates to README.md
--   Version check
--   Fixes for Improved Postal map
--   Updates to dev API
-
-### 1.1.1
-
--   Fixed issue with blip name being set to nil, clearing the screen of all other text
-
-### 1.1
-
--   Added OCRP postals
--   Added `config.lua` file
-
-## Development
-
-This script provides a simple way of working on a new postal map
-
-1. In the resource `fxmanifest.lua` file, uncomment the `cl_dev.lua` requirement line
-2. Do `refresh` and `restart nearest-postal` in-game
-3. Teleport to the first postal code in numerical order
-4. Type `/setnext [postalCode]` where postalCode is the postal that you are at
-5. Type `/next` to insert it
-6. Teleport to the next postal code in numerical order
-7. Type `/next` to insert it
-8. Repeat from step 6 on
-
-If you make a mistake, you can either remove a specific postal using `/remove [postalCode]` or remove the last postal inserted with `/rl` (this will decrease the next value also)
-
-When done with that, you can print all of the postals you just inserted into console with the `/json` command and then copy it from your `CitizenFX.log` file
-
-## Discord
-
-Join my [discord](https://discord.gg/ZcTayce) for support and more scripts
+## Conclusion
+Congratulations, you have successfully installed and configured [Plugin Name]! If you have any questions or issues, please refer to the troubleshooting section or contact support.
