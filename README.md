@@ -1,8 +1,8 @@
-# Installation Guide for [Plugin Name]
+# Installation Guide for SuperGMS Route Integration
 
 ## Prerequisites
-Before you can install [Plugin Name], please make sure that you have the following installed:
-- [List of prerequisites, such as the required version of WordPress or any other dependencies]
+Before you can install the Route Integration, please make sure that you have the following installed:
+- [SuperGMS Notify](https://github.com/Dishairano/SuperGMSNotify)
 
 ## Installation
 To install [Plugin Name], please follow these steps:
