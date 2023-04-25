@@ -5,11 +5,11 @@ config = {
     text = {
         -- The text to display on-screen for the nearest postal. 
         -- Formatted using Lua strings, http://www.lua.org/pil/20.html
-        format = '~y~Nearest Postal~w~: %s (~g~%.2fm~w~)',
+        format = '~y~Dichtstbijzijnde postcode~w~: %s (~g~%.2fm~w~)',
 
         -- ScriptHook PLD Position
-        --posX = 0.225,
-        --posY = 0.963,
+        -- posX = 0.225,
+        -- posY = 0.963,
 
         -- vMenu PLD Position
         posX = 0.22,
@@ -19,7 +19,7 @@ config = {
     blip = {
         -- The text to display in chat when setting a new route. 
         -- Formatted using Lua strings, http://www.lua.org/pil/20.html
-        blipText = 'Postal Route %s',
+        blipText = 'GPS route %s',
 
         -- The sprite ID to display, the list is available here:
         -- https://docs.fivem.net/docs/game-references/blips/#blips
@@ -45,5 +45,5 @@ config = {
 
     -- How often in milliseconds the postal code is updated on each client.
     -- I wouldn't recommend anything lower than 50ms for performance reasons
-    updateDelay = nil,
+    updateDelay = nil
 }

