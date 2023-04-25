@@ -7,12 +7,12 @@ Before you can install the Route Integration, please make sure that you have the
 ## Installation
 To install [Plugin Name], please follow these steps:
 
-1. **Step 1: Download the Plugin**
-   - Explain how to download the plugin. For example, you could provide a link to the plugin on the WordPress plugin repository, or provide a direct download link to a ZIP file.
-2. **Step 2: Upload the Plugin**
-   - Explain how to upload the plugin to the website. For example, if you are using WordPress, you could explain how to upload the ZIP file through the WordPress dashboard.
-3. **Step 3: Activate the Plugin**
-   - Explain how to activate the plugin. For example, if you are using WordPress, you could explain how to activate the plugin through the WordPress dashboard.
+1. Connect to your server using SSH or another method.
+2. Navigate to the resources folder of your FiveM server. You can usually find this folder at path/to/fivem-server/server-data/resources.
+3. Clone the GitHub repository for the plugin using the git clone command. For example, if the GitHub repository URL is https://github.com/username/plugin-name.git, you would run the following command:
+```
+git clone https://github.com/username/plugin-name.git
+```
 
 ## Configuration
 Once you have installed [Plugin Name], you may need to configure it before you can use it. Please follow these steps:
